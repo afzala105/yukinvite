@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>YUKInvite</title>
+  
+  
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+ 
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- ICON Site -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../site.webmanifest">
+    
+    
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+  />
+    
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+    
+    
+    <style>
+      @keyframes anim{
+        50% {transform: rotate(360deg);}
+      }
+      #kembali 
+    </style>
+    
+    
+  </head>
+  <body class="bg-primary d-flex flex-column justify-content-between">
+    
+    <nav id="top" class="text-center  text-white p-2 fs-5 wow fadeInDown d-flex justify-content-start align-items-center">
+    <button id="kembali" type="button" class="btn btn-light"><i class="fas fa-arrow-to-left" onclick="window.history.back()"></i></button>
+    <p class="text-center flex-fill">
+    Contoh Undangan
+    </p>
+    </nav>
+
+    <div id="center" class="flex-fill swiper-container">
+      
+      <div class="swiper-wrapper">
+        
+        
+        <div class="d-flex flex-column justify-content-center swiper-slide text-white ">
+          <img class="rounded mx-auto d-block img-thumbnail wow fadeIn" src="./images/couple.jpg" />
+          <br>
+          <p class="fs-1 cursive fw-bold wow fadeIn">Putra & Putri</p>
+          <p class="fs-6 wow fadeIn">Kami mengundang Bapak/Ibu/Saudara/i dalam acara pernikahan kami.</p>
+          </div>
+          
+        <div class="swiper-slide text-white d-flex flex-column justify-content-center fs-6 ">
+          <p class="wow fadeIn">Assalamu 'alaikum Wr. Wb.</p>
+          <p class="wow fadeIn">Dengan memohon rahmat dan ridho Allah SWT, Kami mengatur resepsi pernikahan</p>
+          <div class="wow fadeIn">
+          <p class="fs-1 cursive">Putra</p>
+          <p>Putra pertama Bapak dan Ibu <br>
+          Desa Sukadesa, Kecamatan, Kabupaten</p>
+          <p>dengan</p>
+          <p class="fs-1 cursive">Putri</p>
+          <p>Putri pertama Bapak dan Ibu<br>
+          Desa Sukadesa, Kecamatan, Kabupaten</p>
+          </div>
+        </div>
+        
+        
+        <div class="d-flex flex-column justify-content-center swiper-slide fs-6 text-white shadow-gone w-100">
+          <p class="">yang Insya Allah akan dilaksanakan pada</p>
+          <div class="row">
+          <div id="akad" class="fs-4 btn btn-outline-success col-md-6 text-white mt-1 mr-1">
+            <p>Akad</p>
+            <p class="text-justify">
+              Pukul : 07.00 - Selesai
+              <br>
+              Hari, Tanggal : Sabtu, 22 Mei 2021
+              <br>
+              di kediaman mempelai putri, Desa Sukadesa, Kecamatan, Kabupaten
+            </p>
+          </div>
+          
+          
+          <div id="resepsi" class="fs-4 btn btn-outline-success col-md-6 text-white mt-1 ml-1">
+            <p>Resepsi</p>
+            <p class="text-justify">
+              Pukul : 11.00 - Selesai
+              <br>
+              Hari, Tanggal : Sabtu, 22 Mei 2021
+              <br>
+              di kediaman mempelai putri, Desa Sukadesa, Kecamatan, Kabupaten
+            </p>
+          </div>
+          </div>
+          
+        </div>
+        
+        <div class="d-flex flex-column justify-content-center swiper-slide text-white ">
+           <div id="mapid" style="width: 90%;" class="mx-auto h-75" alt="">
+        
+            </div>
+          
+          <button type="button" class="btn btn-light mt-2 mx-auto" style="width:90%;" onClick="if(confirm('Anda akan dialihkan ke Maps, lanjutkan ?')){document.location.href='https://maps.app.goo.gl/rb8X6EnHjb1GL52F6'}">Buka di Maps</button>
+          </div>
+          
+          
+        <div class="d-flex flex-column justify-content-center swiper-slide text-white ">
+          <p class="fs-4 cursive">
+"Semoga Allah menghimpun yang terserak dari keduanya. Memberkahi mereka berdua dan kiranya Allah meningkatkan kualitas keturunan mereka, menjadikannya pembuka pintu rahmat, sumber ilmu dan hikmah, dan pemberi rasa aman bagi umat."</p>
+<p class="fs-6 cursive">
+Doa Nabi Muhammad SAW, pada pernikahan putrinya Fatimah Az Zahra dengan Ali bin Abi Thalib
+</p>
+        
+          </div>
+        
+        
+      </div>
+
+  <!-- If we need pagination of slide -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <!--<div class="bulat swiper-button-prev"></div>
+  <div class="bulat swiper-button-next"></div>-->
+
+  <!-- If we need scrollbar -->
+  <!--<div class="swiper-scrollbar"></div>-->
+      
+      
+      
+    </div>
+    
+    <div id="bottom" class="text-center text-white fs-6">
+      Copyright &copy; YUKInvite 2021
+    </div>
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+ <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+<script src="../../js/jquery.min.js"></script>
+
+<script src="../../js/wow.min.js"></script>
+<script>
+  new WOW().init()
+</script> 
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+    <script>
+    
+const swiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  speed: 400,
+  spaceBetween: 100,
+  
+  autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+        },
+  
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+  },
+
+  // Navigation arrows
+  /*navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },*/
+
+  // And if we need scrollbar
+  /*scrollbar: {
+    el: '.swiper-scrollbar',
+  },*/
+});
+
+    </script>
+    
+    
+<script>
+var map = L.map('mapid').setView([-6.897734,107.622761], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([-6.897734,107.622761]).addTo(map)
+    .bindPopup('Lokasi')
+    .openPopup();
+</script>
+    
+  </body>
+</html>
