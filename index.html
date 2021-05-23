@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="website for creating online wedding invitation">
+    <meta name="author" content="Afzal trial 1">
+    <link rel="icon" href="favicon.ico">
+
+    <title>YUKInvite</title>
+    
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Animate CSS CDN -->
+    <link rel="stylesheet" href="./css/animate.min.css" />
+    <style>
+      .hilang{
+        display: none;
+      }
+    </style>
+    
+    
+    </head>
+
+  <body class="text-center">
+    <div class="shading">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">YUKInvite</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#" onClick="beranda()" id="navberanda">Beranda</a>
+            <a class="nav-link" href="#" onClick="tema()" id="navtema">Tema</a>
+            <a class="nav-link" href="#" id="navtentang" onclick="tentang()">Tentang</a>
+          </nav>
+        </div>
+      </header>
+<main>
+      <div id="demo" class="inner cover carousel slide" data-ride="carousel">
+        
+
+        
+        <div class="carousel-inner">
+          
+        <div id="beranda" class="carousel-item active">
+        <h1 class="cover-heading animated fadeIn">Undang teman,</h1>
+        <p class="lead animated fadeIn delay-1s" >semakin mudah mengundang teman dalam acara penting Anda, bersama</p>
+        <p class="lead animated fadeIn delay-2s">
+          <a href="javascript:void(0);" onclick="tema()" class="btn btn-lg btn-secondary">YUKInvite</a>
+        </p>
+        </div>
+        
+        <div id="fitur1" class="carousel-item">
+        <h1 class="cover-heading animated fadeIn">Lebih mudah,</h1>
+        <p class="lead animated fadeIn delay-1s" >bagikan undangan dengan lebih mudah, jangkau teman terjauh, bersama</p>
+        <p class="lead animated fadeIn delay-2s">
+          <a href="#" onclick="tema()" class="btn btn-lg btn-secondary">YUKInvite</a>
+        </p>
+        </div>
+        
+        <div id="fitur2" class="carousel-item">
+        <h1 class="cover-heading animated fadeIn">Lebih murah</h1>
+        <p class="lead animated fadeIn delay-1s" >kurangi pengeluaran ekstra untuk undangan Anda dan lebih hemat, bersama</p>
+        <p class="lead animated fadeIn delay-2s">
+          <a href="#" onclick="tema()" class="btn btn-lg btn-secondary">YUKInvite</a>
+        </p>
+        </div>
+        
+        <div id="fitur3" class="carousel-item">
+        <h1 class="cover-heading animated fadeIn">Lebih Bersih,</h1>
+        <p class="lead animated fadeIn delay-1s" >undangan online tidak meninggalkan limbah dan lebih ramah lingkungan.</p>
+        <p class="lead animated fadeIn delay-2s">
+          <a href="javascript:void(0);" onclick="tema()" class="btn btn-lg btn-secondary">YUKInvite</a>
+        </p>
+        </div>
+        
+        </div>
+        
+  <ol class="carousel-indicators" style="bottom:-1em;">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+  </ol>
+        </div>
+        
+        <!--tema-->
+        <div id="tema" class="inner cover hilang">
+          
+          <div class="animated fadeIn slower">
+          <img class="img-thumbnail rounded d-block w-100" src="./pic/tema-default.jpg" />
+          <div class="row">
+            <a href="./tema/tema default/index.html" class="btn btn-lg btn-secondary btn-block mt-1 col-md-6 col-6">Lihat</a>
+            <a href="" class="btn btn-lg btn-primary btn-block mt-1 col-md-6 col-6">Pilih</a>
+            </div>
+          </div>
+        </div>
+        
+        <!--tentang-->
+        <div id="tentang" class="inner cover hilang">
+          <div class="animated fadeIn slower">
+          <p class="lead">
+            YUKInvite merupakan website yang kami ciptakan untuk mengurangi limbah kertas undangan.
+          </p>
+          <p class="lead">
+            Ini adalah salah satu langkah kami, untuk mengurangi polutan, untuk masa depan yang lebih sehat.
+          </p>
+          <p class="lead">
+            Terima kasih telah berkunjung.
+          </p>
+          <p class="lead">
+            <a href="https://wa.me/6289650292753" class="btn btn-lg btn-secondary btn-block mt-1">Hubungi Kami</a></p>
+          </div>
+        </div>
+        
+        
+        
+        
+        </main>
+
+      
+      
+      
+      
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Copyright &copy; <a href="javascript:void(0)">YUKinvite</a>, by <a href="javascript:void(0)">AADev</a> 2021</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script>window.jQuery || document.write('<script src="./jquery-slim.min.js"><\/script>')</script> -->
+    <script src="./js/jquery-slim.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+ 
+   <script type="text/javascript">
+     var main = document.getElementById('demo');
+     var navberanda = document.getElementById('navberanda');
+     
+     var tem = document.getElementById('tema');
+     var navtema = document.getElementById('navtema');
+     
+     var navtentang = document.getElementById('navtentang');
+     var tent = document.getElementById('tentang');
+     
+     function tema(){
+        main.classList.add('hilang');
+        tent.classList.add('hilang');
+        navtema.classList.add('active');
+        tem.classList.remove('hilang');
+        navberanda.classList.remove('active');
+        navtentang.classList.remove('active');
+       
+     }
+     
+     function tentang(){
+       main.classList.add('hilang');
+       tem.classList.add('hilang');
+       navtentang.classList.add('active');
+       tent.classList.remove('hilang');
+       navtema.classList.remove('active');
+       navberanda.classList.remove('active');
+       
+     }
+     
+     function beranda(){
+        main.classList.remove('hilang');
+        navtema.classList.remove('active');
+        navtentang.classList.remove('active');
+        tem.classList.add('hilang');
+        navberanda.classList.add('active');
+        tent.classList.add('hilang');
+     }
+     
+     
+     
+   </script>
+ 
+  </body>
+</html>
