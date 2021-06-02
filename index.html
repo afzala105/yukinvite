@@ -12,10 +12,16 @@
     <!--mendapatkan data-->
     <script>
       let url = window.location.href;
-      let alihkan = url.split("?");
+      let take = url.split("-");
+      console.log(take.toString());
       
-      if(alihkan.length > 1){
-        let cari = `q={${alihkan[1]}}`;
+      
+      if(take.length > 1){
+        let url = "https://cobadb-b79a.restdb.io/rest/pelanggan?";
+        let part = take[1].toString();
+        
+        let cari = `q={"id":${part}}`;
+        console.log(url + cari);
         let otherParam = {
       mode : "cors",
     headers : {
@@ -26,11 +32,12 @@
     body : null,
     method : "GET"
         }
-        fetch("https://cobadb-b79a.restdb.io/rest/pelanggan?" + cari, otherParam)
+        fetch(url + cari, otherParam)
         .then((res) => res.json())
         .then((data) => {
-      let alihke = data[0]._id;
-      window.location.href="./pesanan/index.html?" + alihke;
+          //console.log(JSON.stringify(data[0]));
+        let alihke = data[0]._id;
+        window.location.href="./pesanan/index.html?" + alihke;
         })
         .catch(e => console.log(e.toString()));
       }
