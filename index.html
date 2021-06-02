@@ -9,39 +9,7 @@
 
     <title>YUKInvite</title>
     
-    <!--mendapatkan data-->
-    <script>
-      let url = window.location.href;
-      let take = url.split("-");
-      console.log(take.toString());
-      
-      
-      if(take.length > 1){
-        let url = "https://cobadb-b79a.restdb.io/rest/pelanggan?";
-        let part = take[1].toString();
-        
-        let cari = `q={"id":${part}}`;
-        console.log(url + cari);
-        let otherParam = {
-      mode : "cors",
-    headers : {
-      "content-type" : "application/json; charset=utf-8",
-      "x-apikey" : "60a69606e3b6e02545edaadc",
-      "cache-control" : "no-cache"
-    },
-    body : null,
-    method : "GET"
-        }
-        fetch(url + cari, otherParam)
-        .then((res) => res.json())
-        .then((data) => {
-          //console.log(JSON.stringify(data[0]));
-        let alihke = data[0]._id;
-        window.location.href="./pesanan/index.html?" + alihke;
-        })
-        .catch(e => console.log(e.toString()));
-      }
-    </script>
+
     
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
