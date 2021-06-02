@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head >
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="your invitation">
+    <script>
+      let url = window.location.href.split("-");
+      let dapatkan = url[1];
+      console.log(dapatkan.toString());
+    </script>
+    <title id="judul">Your Invitation</title>
+    
+<link rel="stylesheet" type="text/css" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    
+ 
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+ 
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+ 
+    <!-- ICON Site -->
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="manifest" href="../site.webmanifest">
+    
+    
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+  />
+    
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+  <!--<link rel="stylesheet" type="text/css" href="style.css"/>-->
+    
+    
+    <style>
+      
+     body {
+        background: url("https://images.unsplash.com/photo-1609840533612-0cdfb9418281?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") no-repeat fixed;
+        background-size: cover;
+        height: 90vh;
+        width: 100%;
+        
+        text-shadow: 0 .05rem .1rem rgb(0, 0, 0,  1);
+        
+      }
+      
+      nav {
+        background: rgb(255, 255, 255, .5);
+      
+        
+      }
+      
+      .cursive {
+        font-family: cursive;
+      }
+      
+      .shadow-gone{
+        text-shadow: none;
+      }
+      nav p {
+        opacity: unset;
+        margin-bottom: unset;
+      }
+      
+      #top {
+        width: 100%;
+        
+        text-align: center;
+        
+      }
+      #center {
+        height: 80%;
+        
+        width: 100%;
+        
+        
+        
+      }
+      #bottom {
+        
+        width: 100%;
+        text-align: center;
+    
+      
+      
+      }
+      
+      .swiper-wrapper {
+        text-align: center
+      
+      
+    </style>
+    
+  </head>
+  <body id="main">
+    <div align="center">
+      <h3 id="load">loading your data, please wait</h3>
+    </div>
+    
+    <script>
+      //data untuk weblanding
+      let main = document.getElementById('main');
+      let load = document.getElementById('load');
+      let backup = load.innerText;
+      
+      let i = 0;
+      let re = setInterval(addot, 200);
+      function addot(){
+        load.innerText += ". ";
+        i++;
+        //console.log(i);
+        if(i > 5){
+          //clearInterval(re);
+          load.innerText = backup;
+          i = 0;
+        }
+      }
+    //data tampungan
+      let nicknamePutra = null;
+      let nicknamePutri = null;
+      let namaPutri = null;
+      let namaPutra = null;
+      let ayahPutra = null;
+      let ayahPutri = null;
+      let ibuPutri = null;
+      let ibuPutra = null;
+      let alamatPutra = null;
+      let alamatPutri = null;
+      let jamAkad = null;
+      let jamResepsi = null;
+      let hariResepsi = null;
+      let hariAkad = null;
+      let lokasiAkad = null;
+      let lokasiResepsi = null;
+      
+    //data untuk rest
+      let getData = "https://cobadb-b79a.restdb.io/rest/pelanggan";
+      let cari = `?q={"id":${dapatkan}}`;
+      let data = null;
+      let key = "60a69606e3b6e02545edaadc";
+      let getParam = {
+    mode : "cors",
+    headers : {
+      "content-type" : "application/json; charset=utf-8",
+      "x-apikey" : key,
+      "cache-control" : "no-cache"
+    },
+    body : null,
+    method : "GET"
+      }
+      console.log(getData + cari);
+      //fetch data get
+  fetch(getData + cari, getParam)
+  .then((response) => response.json())
+  .then((ambil)=> {
+    //console.log(JSON.stringify(ambil[0]));
+    //console.log(data);
+     data = ambil[0];
+    clearInterval(re);
+    main.classList.add("d-flex");
+    main.classList.add("flex-column");
+    main.classList.add("justify-content-center");
+    //console.log(isi);
+    main.innerHTML = `
+    
+    
+    <nav id="top" class="text-center  text-white p-2 fs-5 wow fadeInDown d-flex justify-content-start align-items-center">
+    
+    <p class="text-center cursive flex-fill">
+${data.nicknamePutra} & ${data.nicknamePutri}
+    </p>
+    </nav>
+
+    <div id="center" class="flex-fill swiper-container">
+      
+      <div class="swiper-wrapper">
+        
+        
+        <div class="d-flex flex-column justify-content-center swiper-slide text-white ">
+          <img class="rounded mx-auto d-block img-thumbnail wow fadeIn" src="./tema1/images/couple.jpg" />
+          <br>
+          <p class="fs-1 cursive fw-bold wow fadeIn" id="nickname">${data.nicknamePutra} & ${data.nicknamePutri}</p>
+          <p class="fs-6 wow fadeIn">Kami mengundang Bapak/Ibu/Saudara/i dalam acara pernikahan kami.</p>
+          </div>
+          
+        <div class="swiper-slide text-white d-flex flex-column justify-content-center fs-6 ">
+          <p class="wow fadeIn">Assalamu 'alaikum Wr. Wb.</p>
+          <p class="wow fadeIn">Dengan memohon rahmat dan ridho Allah SWT, Kami mengatur resepsi pernikahan</p>
+          <div class="wow fadeIn">
+          <p class="fs-1 cursive" id="namaPutra">${data.namaPutra}</p>
+          <p id="keluargaPutra">Putra pertama Bapak ${data.ayahPutra} dan Ibu ${data.ibuPutra} <br>
+          ${data.alamatPutra}</p>
+          <p>dengan</p>
+          <p class="fs-1 cursive" id="namaPutri">${data.namaPutri}</p>
+          <p id="keluargaPutri">Putri pertama Bapak ${data.ayahPutri} dan Ibu ${data.ibuPutri}<br>
+          ${data.alamatPutri}</p>
+          </div>
+        </div>
+        
+        
+        <div class="d-flex flex-column justify-content-center swiper-slide fs-6 text-white shadow-gone w-100">
+          <p class="">yang Insya Allah akan dilaksanakan pada</p>
+          <div class="row">
+          <div id="akad" class="fs-4 btn btn-outline-success col-md-6 text-white mt-1 mr-1">
+            <p id="akad" class="bg-success">
+            <i class="fas fa-rings-wedding"></i>
+            Akad
+            </p>
+            <p class="text-justify" id="waktuAlamatAkad">
+              Pukul : ${data.jamAkad}<br>
+              Hari, Tanggal : ${data.hariAkad}
+              <br>
+              di ${data.lokasiAkad}
+            </p>
+          </div>
+          
+          
+          <div id="resepsi" class="fs-4 btn btn-outline-success col-md-6 text-white mt-1 ml-1">
+            <p id="resepsi" class="bg-success">
+            <i class="fas fa-heart"></i>
+            Resepsi
+            </p>
+            <p class="text-justify" id="waktuAlamatResepsi">
+              Pukul : ${data.jamResepsi}
+              <br>
+              Hari, Tanggal : ${data.hariResepsi}
+              <br>
+              di ${data.lokasiResepsi}
+            </p>
+          </div>
+          </div>
+          
+        </div>
+        
+        <div class="d-flex flex-column justify-content-center swiper-slide text-white ">
+          <p>
+          merupakan suatu kebahagiaan dan kehormatan bagi Kami, apabila Bapak/Ibu/Saudara/i berkenan hadir.
+          <br />
+      Atas kehadiran Bapak/Ibu/Saudara/i, Kami ucapkan terima kasih.
+          </p>
+          <p>
+            Wassalamu 'alaikum Wr. Wb.
+          </p>
+          
+           <div id="mapid" style="width: 90%; height: 50%; border: 1px solid #000;" class="mx-auto" alt="">
+          your map goes here
+            </div>
+          
+          <button type="button" class="btn btn-light mt-2 mx-auto" style="width:90%;" onClick="if(confirm('Anda akan dialihkan ke Maps, lanjutkan ?')){document.location.href='https://maps.app.goo.gl/rb8X6EnHjb1GL52F6'}">Buka di Maps</button>
+          </div>
+          
+          
+        <div class="d-flex flex-column justify-content-center swiper-slide text-white ">
+          <p class="fs-4 cursive">
+"Semoga Allah menghimpun yang terserak dari keduanya. Memberkahi mereka berdua dan kiranya Allah meningkatkan kualitas keturunan mereka, menjadikannya pembuka pintu rahmat, sumber ilmu dan hikmah, dan pemberi rasa aman bagi umat."</p>
+<p class="fs-6 cursive">
+Doa Nabi Muhammad SAW, pada pernikahan putrinya Fatimah Az Zahra dengan Ali bin Abi Thalib
+</p>
+        
+          </div>
+        
+        
+      </div>
+
+  <!-- If we need pagination of slide -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <!--<div class="bulat swiper-button-prev"></div>
+  <div class="bulat swiper-button-next"></div>-->
+
+  <!-- If we need scrollbar -->
+  <!--<div class="swiper-scrollbar"></div>-->
+      
+      
+      
+    </div>
+    
+    <div id="bottom" class="text-center text-white fs-6">
+      Copyright &copy; <a href="yukinvite.netlify.app">YUKInvite</a> 2021
+    </div>
+    
+    `;
+  
+const swiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  speed: 400,
+  spaceBetween: 100,
+  
+  autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+        },
+  
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+  },
+
+  // Navigation arrows
+  /*navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },*/
+
+  // And if we need scrollbar
+  /*scrollbar: {
+    el: '.swiper-scrollbar',
+  },*/
+});
+  
+    //return JSON.stringify(data[0]);
+    
+    let lokasi = data.kodeAlamat.split(",");
+   console.log(document.getElementById('mapid'));
+var map = L.map('mapid').setView([lokasi[0],lokasi[1]], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([lokasi[0],lokasi[1]]).addTo(map)
+    .bindPopup('Lokasi')
+    .openPopup();
+    
+  })
+  .catch((err) => console.log(err.toString()));
+
+      
+      
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+<script src="../js/jquery.min.js"></script>
+
+    
+  </body>
+</html>
